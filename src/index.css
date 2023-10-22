@@ -1,13 +1,219 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+	--accent-color: #e54065;
+	--bg-color: #f4f5f9;
+	--border-color: #cfd2dc;
+	--text-color: #636363;
+	--filter-btn-color: #e1e4ea;
+	--read-bg-color: #f2f2f2;
+	--date-time-color: #909090;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: var(--text-color);
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+		sans-serif;
+}
+
+.background_box {
+	width: 100%;
+	height: 100%;
+	min-width: 100vw;
+	min-height: 100vh;
+	padding: 25px 30px;
+	background-color: var(--bg-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+/* Filter Css */
+
+.filter_bar {
+	padding: 5px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	/* font-weight: 600; */
+	font-size: 14px;
+}
+
+.each_filter {
+	margin: 0 5px;
+	padding: 0 10px;
+}
+
+.selected_filter {
+	background-color: var(--filter-btn-color);
+	border: 1px solid var(--border-color);
+	border-radius: 100em;
+}
+
+/* Email Css */
+
+.outermost_email_box {
+	margin: 5px 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+/* Chrome, Safari and Opera */
+.no_scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.no_scrollbar {
+	-ms-overflow-style: none;
+	/* IE and Edge */
+	scrollbar-width: none;
+	/* Firefox */
+}
+
+.loading_error {
+	margin: 20px;
+	font-size: 18px;
+}
+
+/* Email List Css */
+
+.email_list_box {
+	height: 85vh;
+	overflow: scroll;
+	flex: auto;
+	margin-top: -15px;
+	margin-bottom: -15px;
+	margin-right: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.email_list_each_email_box {
+	background-color: white;
+	width: 100%;
+	border: 1.8px solid var(--border-color);
+	border-radius: 5px;
+	padding: 5px 10px;
+	margin: 15px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.email_list_each_email_img {
+	border-radius: 100%;
+	max-width: 40px;
+	max-height: 40px;
+	width: 40px;
+	height: 40px;
+	min-width: 40px;
+	min-height: 40px;
+	background-color: var(--accent-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 20px;
+}
+
+.email_list_each_email_details {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding-left: 10px;
+}
+
+.email_list_favourite_tag {
+	color: var(--accent-color);
+	margin: 0 30px;
+}
+
+.email_list_favourite_email {
+	background-color: var(--read-bg-color);
+}
+
+.email_list_seleted_email {
+	border: 1.8px solid var(--accent-color);
+}
+
+.date_time_text {
+	color: var(--date-time-color);
+}
+
+/* Opened Email Css */
+
+.opened_email_box {
+	flex: 3;
+	background: white;
+	border: 1.8px solid var(--border-color);
+	border-radius: 5px;
+	margin-left: 10px;
+	padding: 20px;
+	height: 85vh;
+	overflow: scroll;
+	display: flex;
+	flex-direction: row;
+}
+
+.opened_email_img {
+	border-radius: 100%;
+	max-width: 40px;
+	max-height: 40px;
+	width: 40px;
+	height: 40px;
+	min-width: 40px;
+	min-height: 40px;
+	background-color: var(--accent-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 20px;
+}
+
+.opened_email_details {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding-left: 20px;
+}
+
+.opened_email_subject {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.mark_as_favourite_btn {
+	font-size: 12px;
+	padding: 5px;
+	border-radius: 100em;
+	border: none;
+	outline-width: 0;
+	cursor: pointer;
+	background-color: var(--accent-color);
+	color: white;
+	letter-spacing: 0.5px;
+}
+
+.opened_email_body {
+	margin: 20px 0;
 }
